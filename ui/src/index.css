@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+:root {
+  --ant-flash-white: #E7ECEF;
+  --yin-blue: #274C77;
+  --air-blue: #6096BA;
+  --uranian-blue: #A3CEF1;
+  --battleship-gray: #8B8C89;
+  --text-black: #333333;
+  --white: #ffffff;
+  --flavoured-white: #f8f9fa;
+  --pantone-red: #E63946;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}

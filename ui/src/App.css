@@ -1,0 +1,117 @@
+#root {
+  background-color: var(--ant-flash-white);
+  height: 100%;
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.auth-container .error-text {
+  color: var(--pantone-red);
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0;
+  margin-top: 8px;
+}
+
+.auth-container .heading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-container .heading-container h1 {
+  padding: 0;
+  margin: 0;
+  font-family: "DM Mono", monospace;
+  font-weight: 400;
+  font-size: 36px;
+  color: var(--text-black);
+}
+
+.auth-container .heading-container h3 {
+  padding: 0;
+  margin: 0;
+  margin-top: 4px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--text-black);
+}
+
+.auth-container .form-container {
+  margin-top: 60px;
+  width: 386px;
+}
+
+.auth-container .form-container .password-wrapper {
+  margin-top: 48px;
+}
+
+.auth-container .form-container .auth-input {
+  background: none;
+  width: 386px;
+  height: 48px;
+  font-family: "DM Mono", monospace;
+  font-size: 16px;
+  padding: 4px 16px;
+  outline: none;
+  border: 1px solid var(--battleship-gray);
+}
+
+.auth-container .form-container .auth-input.error {
+  border-color: var(--pantone-red);
+}
+
+.auth-container .form-container .forgot-password {
+  padding: 0;
+  margin: 0;
+  margin-top: 12px;
+  font-family: "DM Sans", sans-serif;
+  text-align: end;
+}
+
+.auth-container .form-container .btn {
+  background-color: var(--yin-blue);
+  color: var(--flavoured-white);
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 48px;
+  padding: 4px 16px;
+  margin-top: 48px;
+  font-family: "DM Mono", monospace;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.auth-container .form-container .btn:disabled {
+  background-color: var(--battleship-gray);
+  cursor: not-allowed;
+}
+
+.auth-container .already-account-wrapper {
+  text-align: center;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  margin-top: 16px;
+}
+
+.auth-container .already-account-wrapper span:first-child {
+  color: var(--battleship-gray);
+}
+
+.auth-container .already-account-wrapper span:last-child {
+  color: var(--text-black);
+  padding-left: 2px;
+}
