@@ -44,6 +44,7 @@ func main() {
 			DbConfig:        dbCfg,
 			RedisConfig:     redisCfg,
 			AuthTokenConfig: tokenCfg,
+			WebAddr:         "http://localhost:5173",
 		},
 		store: *store.NewStore(db, sessionManager, authenticator),
 	}

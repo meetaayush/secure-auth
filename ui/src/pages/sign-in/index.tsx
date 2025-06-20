@@ -7,10 +7,11 @@ import * as yup from "yup";
 import { useMutation } from "@tanstack/react-query";
 
 const HEADING = "Downtask";
-const SUBHEADING = "Create a new account";
-const SUBMIT_BTN = "Sign Up";
-const ALREADY_ACCOUNT = "Already have an account?";
-const SIGN_IN = "Sign In";
+const SUBHEADING = "Welcome back! Log-in to your account";
+const FORGOT_PASSWORD = "Forgot Password?";
+const SUBMIT_BTN = "Sign In";
+const NEW_ACCOUNT = "Don't have an account?";
+const SIGN_UP = "Sign Up";
 const API = "http://localhost:3001/api";
 
 interface IFormInput {
@@ -23,8 +24,8 @@ const schema = yup.object({
   password: yup.string().required().min(3).max(20),
 });
 
-const registerUser = async (data: IFormInput) => {
-  const url = `${API}/v1/users/register`;
+const loginUser = async (data: IFormInput) => {
+  const url = `${API}/v1/users/auth`;
 
   try {
     const res = await fetch(url, {
@@ -41,13 +42,18 @@ const registerUser = async (data: IFormInput) => {
       throw new Error(body.error || "invalid email or password");
     }
 
+    if (res.status === 401) {
+      const body = await res.json();
+      throw new Error(body.error || "invalid email or password");
+    }
+
     return res.json();
   } catch (error) {
     throw error;
   }
 };
 
-const Signup = () => {
+const SignIn = () => {
   const {
     register,
     handleSubmit,
@@ -56,10 +62,10 @@ const Signup = () => {
   } = useForm({ resolver: yupResolver(schema) });
 
   const mutation = useMutation({
-    mutationFn: registerUser,
+    mutationFn: loginUser,
     onSuccess: async (data) => {
       if (data.ok) {
-        console.log("User registered successfully"); // todo: remove this and navigate to login page
+        console.log("User logged in successfully"); // todo: remove this and navigate to login page
       }
     },
     onError: (resp) => {
@@ -108,6 +114,8 @@ const Signup = () => {
             ) : null}
           </div>
 
+          <p className="forgot-password">{FORGOT_PASSWORD}</p>
+
           <Button
             disabled={Object.keys(errors).length !== 0}
             type="submit"
@@ -118,12 +126,12 @@ const Signup = () => {
         </form>
 
         <p className="already-account-wrapper">
-          <span>{ALREADY_ACCOUNT}</span>
-          <span>{SIGN_IN}</span>
+          <span>{NEW_ACCOUNT}</span>
+          <span>{SIGN_UP}</span>
         </p>
       </div>
     </div>
   );
 };
 
-export default Signup;
+export default SignIn;

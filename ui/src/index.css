@@ -18,6 +18,6 @@ html, body {
   height: 100vh;
 }
 
-*, *::before, *::after {
+*, *::after, *::before {
   box-sizing: border-box;
 }

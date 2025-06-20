@@ -21,6 +21,7 @@ type config struct {
 	DbConfig        dbConfig
 	RedisConfig     redisConfig
 	AuthTokenConfig tokenConfig
+	WebAddr         string
 }
 
 type dbConfig struct {
@@ -51,9 +52,9 @@ func (app *application) NewRoutes() *chi.Mux {
 	mux := chi.NewRouter()
 
 	mux.Use(cors.Handler(cors.Options{
-		AllowedOrigins:   []string{"http://localhost:5173"},
-		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
-		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
+		AllowedOrigins:   []string{app.config.WebAddr},
+		AllowedMethods:   []string{"GET", "POST", "PATCH", "DELETE", "PUT", "OPTIONS"},
+		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-XSRF-Token"},
 		ExposedHeaders:   []string{"Link"},
 		AllowCredentials: true,
 		MaxAge:           300,

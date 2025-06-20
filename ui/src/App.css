@@ -12,15 +12,6 @@
   height: 100%;
 }
 
-.auth-container .error-text {
-  color: var(--pantone-red);
-  font-family: "DM Sans", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  margin: 0;
-  margin-top: 8px;
-}
-
 .auth-container .heading-container {
   display: flex;
   flex-direction: column;
@@ -30,7 +21,7 @@
 .auth-container .heading-container h1 {
   padding: 0;
   margin: 0;
-  font-family: "DM Mono", monospace;
+  font-family: 'DM Mono', monospace;
   font-weight: 400;
   font-size: 36px;
   color: var(--text-black);
@@ -40,7 +31,7 @@
   padding: 0;
   margin: 0;
   margin-top: 4px;
-  font-family: "DM Sans", sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-size: 20px;
   color: var(--text-black);
@@ -51,19 +42,28 @@
   width: 386px;
 }
 
+.auth-container .form-container .error-text {
+  color: var(--pantone-red);
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0;
+  margin-top: 8px;
+}
+
 .auth-container .form-container .password-wrapper {
   margin-top: 48px;
 }
 
 .auth-container .form-container .auth-input {
   background: none;
-  width: 386px;
+  width: 100%;
   height: 48px;
-  font-family: "DM Mono", monospace;
+  font-family: 'DM Mono', monospace;
   font-size: 16px;
   padding: 4px 16px;
   outline: none;
-  border: 1px solid var(--battleship-gray);
+  border: 1px solid var(--battleship-gray)
 }
 
 .auth-container .form-container .auth-input.error {
@@ -74,8 +74,8 @@
   padding: 0;
   margin: 0;
   margin-top: 12px;
-  font-family: "DM Sans", sans-serif;
   text-align: end;
+  font-family: "DM Sans", sans-serif;
 }
 
 .auth-container .form-container .btn {
@@ -101,7 +101,7 @@
 .auth-container .already-account-wrapper {
   text-align: center;
   font-family: "DM Sans", sans-serif;
-  font-size: 14px;
+  font-family: 14px;
   font-weight: 500;
   margin: 0;
   margin-top: 16px;
